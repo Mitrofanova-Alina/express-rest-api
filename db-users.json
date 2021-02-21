@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "0094382e-4eb2-49a6-8dd1-1b92e6f7ac3d",
+      "username": "alinaM",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsaW5hTSIsInBhc3N3b3JkIjoiMTIzMTIzIiwidGltZSI6MTYwNzAxMDQ2MjI3MSwiaWF0IjoxNjA3MDEwNDYyLCJleHAiOjE2MDcwMTA3NjJ9.Nl71G-gzjYP_4Az-5NbkA5Y5_o6mZmZkZ0F_b9VzdvU"
+    },
+    {
+      "id": "c99a7083-9f97-4588-914b-ed346f303256",
+      "username": "qwerty",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZXJ0eSIsInBhc3N3b3JkIjoicXdlcnR5IiwidGltZSI6MTYwNzAxMDcxNjAxNCwiaWF0IjoxNjA3MDEwNzE2LCJleHAiOjE2MDcwMTEwMTZ9.51FWAsvxq7QW8jxI_8oHUOhIfyyiontDyH0yr11p8jw"
+    },
+    {
+      "id": "6d82d466-81cf-47fe-8761-068ea0972640",
+      "username": "qwerty123",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZXJ0eTEyMyIsInBhc3N3b3JkIjoicXdlcnR5MTIzIiwidGltZSI6MTYwNzYwOTI2Mjk4NiwiaWF0IjoxNjA3NjA5MjYyLCJleHAiOjE2MDc2MDk1NjJ9.7s_5eWhJyb3I1RdovCc6eFRYn16VT6eNXW5Y3qYHh-I"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "employees": [
+    {
+      "id": "9bddd9ab-a64c-4ef6-b70c-9fbee0677f49",
+      "name": "Lubov",
+      "surname": "Popova",
+      "birthDate": "18.03.1942",
+      "position": "Super Engineer",
+      "salary": 100000
+    },
+    {
+      "id": "3aaec0c4-0900-4e89-bc4a-cf8a867f8f13",
+      "name": "Li",
+      "surname": "Li",
+      "birthDate": "01.04.2010",
+      "position": "Software Engineer",
+      "salary": 1000
+    },
+    {
+      "id": "f457bafa-05dc-4ab5-a8d2-574e91ff8073",
+      "name": "Li",
+      "surname": "Li",
+      "birthDate": "01.04.2010",
+      "position": "Software Engineer",
+      "salary": 1000
+    },
+    {
+      "id": "22925f6a-03f8-4367-a1cb-6ce26beda93a",
+      "name": "Li",
+      "surname": "Zhuycy",
+      "birthDate": "01.04.2010",
+      "position": "Software Engineer",
+      "salary": 1000
+    },
+    {
+      "id": "124c96db-dc06-4752-8173-fb4e7c305986",
+      "name": "Ivan",
+      "surname": "Ivanov",
+      "birthDate": "10.10.2000",
+      "position": "Software Engineer",
+      "salary": 10000
+    },
+  ]
+}

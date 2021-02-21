@@ -1,5 +1,7 @@
 module.exports = {
   host: "localhost",
   port: 3012,
-  url: "/"
+  url: "/",
+  pageSize: 5,
+  tokenType: 'auth'
 };

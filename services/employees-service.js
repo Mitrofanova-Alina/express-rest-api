@@ -1,75 +1,63 @@
-const db = require('./database');
+const Boom = require('@hapi/boom');
+const { v4: uuid } = require('uuid');
+const { dbEmployees } = require('./database');
+const msg = require('../config/messages');
+const config = require('../config/config');
 
 class EmployeesService {
-    getAll = () => {
-        return db.get("employees").value();
+    async getAllEmployees(pageNum, filters) {
+        const start = (pageNum - 1) * config.pageSize;
+        const end = start + config.pageSize;
+        return dbEmployees
+            .get("employees")
+            .filter(filters)
+            .sortBy('salary')
+            .slice(start, end)
+            .value();
     }
 
-    getOne = () => {
-
+    async getEmployee(id) {
+        const item = await dbEmployees
+            .get("employees")
+            .find({id: id})
+            .value();
+        if (!item) {
+            throw Boom.notFound(msg.employeeMsg.NOT_FOUND(id));
+        }
+        return item;
     }
 
-    deleteAll = () => {
-
+    async deleteEmployee(id) {
+        const item = await dbEmployees
+            .get("employees")
+            .remove({id: id})
+            .write();
+        if (item.length === 0) {
+            throw Boom.notFound(msg.employeeMsg.NOT_FOUND(id));
+        }
+        return item;
     }
 
-    deleteOne = () => {
-
+    async addEmployee(data) {
+        const id = await uuid();
+        const item = dbEmployees
+            .get("employees")
+            .push({ id: id, ...data})
+            .write();
+        if (!item) {
+            throw Boom.notFound(msg.employeeMsg.NOT_FOUND);
+        }
+        return item;
     }
 
-    post = () => {
-
-    }
-
-    put = () => {
-
+    async updateEmployee(id, data) {
+        const item = dbEmployees
+            .get("employees")
+            .find({id: id})
+            .assign(data)
+            .write();
+        return item;
     }
 }
 
 module.exports = new EmployeesService();
-
-// router.get('/', (req, res) => {
-//     res.send('Hello API');
-// })
-//
-// router.get('/employees', (req, res) => {
-//     const data = db.get("employees").value();
-//     res.send(data);
-// })
-//
-// router.get('/employees/:id', (req, res) => {
-//     console.log("get", req.params);
-//     const employee = db.get("employees").find({id: Number(req.params.id)}).value();
-//     res.send(employee);
-// })
-//
-// router.post('/employees', (req, res) => {
-//     console.log("post", req.body);
-//     const employee = {
-//         id: Date.now(),
-//         name: req.body.name,
-//         surname: req.body.surname,
-//         age: req.body.age
-//     };
-//     db.get("employees").push(employee).write();
-//     res.send(employee);
-// })
-//
-// router.put('/employees/:id', (req, res) => {
-//     console.log("put", req.body);
-//     const employee = {
-//         id: Number(req.params.id),
-//         name: req.body.name,
-//         surname: req.body.surname,
-//         age: req.body.age
-//     };
-//     db.get("employees").remove({id: Number(req.params.id)}).write();
-//     db.get("employees").push(employee).write();
-//     res.sendStatus(200);
-// })
-//
-// router.delete('/employees/:id', (req, res) => {
-//     console.log("delete", req.params);
-//     db.get("employees").remove({id: Number(req.params.id)}).write();
-//     res.sendStatus(200);
-// })
